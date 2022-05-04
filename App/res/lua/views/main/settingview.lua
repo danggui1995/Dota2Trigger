@@ -47,6 +47,7 @@ function M:onInit()
     self.applyBtn = fgui.GetComponent(self.root, "applyBtn", Button)
     self.applyBtn:onClick(function ()
         SettingsManager.saveConfig()
+        VPKManager.loadVPK()
     end)
 end
 

@@ -31,6 +31,10 @@ local __localEventMap = {}
 
 
 function M.loadVPK(func)
+    local enginePath = SettingsManager.getConfig("ENGINE_PATH")
+    if not enginePath or enginePath == "" then
+        return
+    end
     if not __vpkPackage then
         if func then
             table.insert(__vpkCallbackList, func)
@@ -38,7 +42,7 @@ function M.loadVPK(func)
         if not __isloadingVPK then
             __isloadingVPK = true
 
-            local vpkPath = Path.Combine(SettingsManager.getConfig("ENGINE_PATH"), vpk_path)
+            local vpkPath = Path.Combine(enginePath, vpk_path)
             Dispatcher.dispatchEvent(EventType.Progress_Change_Value, 0, Desc[1000040])
             VRFHelper.instance:LoadVPK(vpkPath, function(pkg)
                 __vpkPackage = pkg
