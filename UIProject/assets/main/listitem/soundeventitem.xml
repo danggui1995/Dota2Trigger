@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="800,373">
+  <displayList>
+    <text id="n2_tq98" name="nameLabel" xy="46,17" size="190,34" fontSize="24" ubb="true" autoSize="none" autoClearText="true" text="2222"/>
+    <image id="n7_tq98" name="n7" src="tf02tm" fileName="pack/arrow.png" pkg="8vw069l3" xy="19,21"/>
+    <component id="n1_tq98" name="n1" src="kkj65i" fileName="kvcomp/kvinput.xml" xy="47,81" size="753,50">
+      <relation target="" sidePair="width-width,right-right"/>
+    </component>
+    <component id="n3_tq98" name="n3" src="kkj65i" fileName="kvcomp/kvinput.xml" xy="47,141" size="753,50">
+      <relation target="" sidePair="width-width,right-right"/>
+    </component>
+    <component id="n4_tq98" name="n4" src="kkj65i" fileName="kvcomp/kvinput.xml" xy="47,201" size="753,50">
+      <relation target="" sidePair="width-width,right-right"/>
+    </component>
+    <component id="n5_tq98" name="n5" src="kkj65i" fileName="kvcomp/kvinput.xml" xy="47,261" size="753,50">
+      <relation target="" sidePair="width-width,right-right"/>
+    </component>
+    <component id="n6_tq98" name="n6" src="kkj65i" fileName="kvcomp/kvinput.xml" xy="47,321" size="753,50">
+      <relation target="" sidePair="width-width,right-right"/>
+    </component>
+    <image id="n9_tq98" name="n9" src="tf02u9" fileName="pack/Shape1.png" pkg="8vw069l3" xy="756,7" size="1,738" rotation="90"/>
+  </displayList>
+</component>

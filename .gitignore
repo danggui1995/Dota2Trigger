@@ -1,0 +1,8 @@
+
+UIProject/.objs/
+.vscode
+.vs
+.DS_Store
+*.tx
+.idea
+extract

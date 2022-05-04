@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" opaque="false" designImage="ui://exa71go7ysvt0">
+  <controller name="isEmpty" pages="0,,1," selected="0"/>
+  <displayList>
+    <list id="n0_kkj6" name="unitlist" xy="240,176" size="496,904" overflow="scroll" scrollBarFlags="132" lineGap="10" defaultItem="ui://exa71go7kkj65f" autoClearItems="true">
+      <relation target="" sidePair="height-height,middle-middle,left-left"/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <list id="n1_kkj6" name="kvlist" xy="841,129" size="1064,951" overflow="scroll" scrollBarFlags="128" lineGap="5" autoClearItems="true">
+      <gearDisplay controller="isEmpty" pages="0"/>
+      <relation target="" sidePair="height-height,middle-middle,right-right"/>
+    </list>
+    <component id="n4_ihih" name="searchComp" src="ihih7t" fileName="comp/SearchComp.xml" xy="242,113" size="484,50">
+      <relation target="n0_kkj6" sidePair="left-left,bottom-top"/>
+    </component>
+    <component id="n5_ihih" name="n5" src="ihih7u" fileName="comp/EmptyComp.xml" xy="1180,371">
+      <gearDisplay controller="isEmpty" pages="1"/>
+    </component>
+  </displayList>
+</component>

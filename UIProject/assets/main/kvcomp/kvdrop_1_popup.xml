@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="360,500">
+  <displayList>
+    <graph id="n0_jre8" name="n0" xy="0,0" size="360,500" touchable="false" type="rect" lineColor="#ffa0a0a0" fillColor="#fff0f0f0">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <list id="n1_jre8" name="list" xy="0,0" size="360,500" restrictSize="0,0,0,500" overflow="scroll" defaultItem="ui://exa71go7jre85w"/>
+  </displayList>
+  <relation target="n1_jre8" sidePair="width-width,height-height"/>
+</component>

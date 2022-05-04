@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" opaque="false">
+  <displayList>
+    <component id="n0_tf02" name="line1" src="tf028q" fileName="comp/msgline.xml" xy="560,800" alpha="0">
+      <relation target="" sidePair="center-center,bottom-bottom"/>
+    </component>
+    <component id="n1_tf02" name="line2" src="tf028q" fileName="comp/msgline.xml" xy="560,938" alpha="0">
+      <relation target="" sidePair="center-center,bottom-bottom"/>
+    </component>
+  </displayList>
+  <transition name="showline2">
+    <item time="0" type="Alpha" target="n1_tf02" tween="true" startValue="0" endValue="1" duration="6"/>
+    <item time="0" type="Scale" target="n1_tf02" tween="true" startValue="0,0" endValue="1,1" duration="6"/>
+    <item time="0" type="XY" target="n1_tf02" tween="true" startValue="-,938" endValue="-,847" duration="6"/>
+    <item time="24" type="Alpha" target="n1_tf02" tween="true" startValue="1" endValue="0" duration="6"/>
+    <item time="24" type="Scale" target="n1_tf02" tween="true" startValue="1,1" endValue="0,0" duration="6"/>
+    <item time="24" type="XY" target="n1_tf02" tween="true" startValue="-,847" endValue="-,625" duration="6"/>
+  </transition>
+  <transition name="showline1">
+    <item time="0" type="Alpha" target="n0_tf02" tween="true" startValue="0" endValue="1" duration="6"/>
+    <item time="0" type="Scale" target="n0_tf02" tween="true" startValue="0,0" endValue="1,1" duration="6"/>
+    <item time="0" type="XY" target="n0_tf02" tween="true" startValue="-,800" endValue="-,676" duration="6"/>
+    <item time="24" type="Alpha" target="n0_tf02" tween="true" startValue="1" endValue="0" duration="6"/>
+    <item time="24" type="Scale" target="n0_tf02" tween="true" startValue="1,1" endValue="0,0" duration="6"/>
+    <item time="24" type="XY" target="n0_tf02" tween="true" startValue="-,676" endValue="-,307" duration="6"/>
+  </transition>
+</component>

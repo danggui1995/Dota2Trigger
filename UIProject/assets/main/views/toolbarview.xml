@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" opaque="false" designImage="ui://exa71go7kkj65e">
+  <displayList>
+    <graph id="n0_slbw" name="n0" xy="221,4" size="1687,100" type="rect"/>
+    <component id="n2_ihih" name="newBtn" src="ihih7k" fileName="comp/ButtonLabel.xml" xy="254,20" size="114,72">
+      <Button title="新建"/>
+    </component>
+    <component id="n3_ihih" name="selectBtn" src="ihih7k" fileName="comp/ButtonLabel.xml" xy="384,20" size="128,72">
+      <Button title="快速选中"/>
+    </component>
+    <component id="n4_ihih" name="saveBtn" src="ihih7k" fileName="comp/ButtonLabel.xml" xy="531,19" size="182,72" visible="false">
+      <Button title="保存（ctrl+s）"/>
+    </component>
+  </displayList>
+</component>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="hasData" pages="0,,1," selected="0"/>
+  <controller name="internal" pages="0,,1," selected="0"/>
+  <displayList>
+    <component id="n23_khho" name="n23" src="khho90" fileName="views/blackmaskview.xml" xy="0,0">
+      <relation target="" sidePair="width-width,height-height"/>
+    </component>
+    <component id="n2_wgos" name="n2" src="g1jv80" fileName="views/maskview.xml" xy="342,162" size="1236,756">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </component>
+    <component id="n3_wgos" name="closeBtn" src="mcws8l" fileName="comp/ButtonClose.xml" xy="1474,185" group="n22_zlcp"/>
+    <list id="n11_zlcp" name="kvlist" xy="826,362" size="712,531" group="n22_zlcp" overflow="scroll" scrollBarFlags="132" lineGap="5" defaultItem="ui://exa71go7kkj65i" autoClearItems="true">
+      <gearDisplay controller="hasData" pages="1"/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <text id="n12_zlcp" name="path" xy="405,241" size="817,34" group="n22_zlcp" fontSize="24" ubb="true" autoSize="shrink" autoClearText="true" text="1213231" input="true"/>
+    <component id="n19_zlcp" name="addNewFileBtn" src="ihih7k" fileName="comp/ButtonLabel.xml" xy="401,293" size="142,50" group="n22_zlcp">
+      <Button title="新文件" titleFontSize="18"/>
+    </component>
+    <list id="n27_udqi" name="filelist" xy="401,362" size="406,529" group="n22_zlcp" overflow="scroll" scrollBarFlags="4" lineGap="5" defaultItem="ui://exa71go7l5qk92" autoClearItems="true">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <image id="n29_n6cp" name="n29" src="tf02ty" fileName="pack/DisabledIcon.png" pkg="8vw069l3" xy="997,369" size="314,314" group="n22_zlcp">
+      <gearDisplay controller="hasData" pages="0"/>
+      <gearDisplay2 controller="internal" pages="1" condition="1"/>
+    </image>
+    <text id="n30_n6cp" name="n30" xy="1057,709" size="196,34" group="n22_zlcp" fontSize="24" ubb="true" text="内置事件无法修改">
+      <gearDisplay controller="internal" pages="1"/>
+    </text>
+    <group id="n22_zlcp" name="n22" xy="401,185" size="1137,708" advanced="true">
+      <relation target="n2_wgos" sidePair="center-center,middle-middle"/>
+    </group>
+  </displayList>
+</component>

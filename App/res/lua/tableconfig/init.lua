@@ -1,0 +1,6 @@
+require "tableconfig.Desc"
+require "tableconfig.KVModule"
+require "tableconfig.KVUnit"
+require "tableconfig.KVHero"
+require "tableconfig.KVAbility"
+require "tableconfig.KVComplex"

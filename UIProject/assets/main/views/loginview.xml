@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <graph id="n3_g1jv" name="n3" xy="0,0" size="1920,1080" type="rect" lineColor="#ffe5e5e5" fillColor="#fff3f3f3" corner="1">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <list id="n0_g1jv" name="list" xy="141,180" size="1637,719" overflow="scroll" scrollBarFlags="132" lineGap="10" defaultItem="ui://exa71go7g1jv7z" autoItemSize="false" align="center" autoClearItems="true">
+      <relation target="" sidePair="width-width,height-height,center-center,middle-middle"/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <component id="n2_g1jv" name="newBtn" src="ihih7k" fileName="comp/ButtonLabel.xml" xy="203,107">
+      <relation target="n0_g1jv" sidePair="left-left,bottom-top"/>
+      <Button title="新建"/>
+    </component>
+  </displayList>
+</component>

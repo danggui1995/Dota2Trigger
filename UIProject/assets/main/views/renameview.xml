@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="showDrop" pages="0,,1," selected="0"/>
+  <displayList>
+    <graph id="n0_ihih" name="n0" xy="0,0" size="1920,1080" type="rect" fillColor="#91000000">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <graph id="n2_ihih" name="n2" xy="369,403" size="1177,100" type="rect" lineSize="2">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </graph>
+    <text id="n1_ihih" name="input" xy="369,403" size="1177,100" fontSize="24" autoSize="none" text="" input="true">
+      <relation target="n2_ihih" sidePair="width-width,height-height,center-center,middle-middle"/>
+    </text>
+    <component id="n3_ihih" name="yesBtn" src="ihih7r" fileName="comp/ButtonYes.xml" xy="688,606">
+      <relation target="n1_ihih" sidePair="left-left"/>
+      <Button title="确认"/>
+    </component>
+    <component id="n4_ihih" name="noBtn" src="ihih7s" fileName="comp/ButtonNo.xml" xy="970,606">
+      <relation target="n1_ihih" sidePair="right-right"/>
+      <Button title="取消"/>
+    </component>
+    <list id="n6_nnn5" name="list" xy="377,96" size="1161,300" overflow="scroll" scrollBarFlags="4" lineGap="5" defaultItem="ui://exa71go7nnn594" vAlign="bottom" autoClearItems="true">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+  </displayList>
+</component>

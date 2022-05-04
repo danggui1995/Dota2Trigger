@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="200,200" pivot="0.5,0.5" extention="Button">
+  <controller name="empty" pages="0,,1,,2," selected="0">
+    <remark page="0" value="尚未加载"/>
+    <remark page="1" value="加载失败"/>
+    <remark page="2" value="成功"/>
+  </controller>
+  <controller name="button" pages="0,up,1,down" selected="0"/>
+  <displayList>
+    <graph id="n5_rqwz" name="n5" xy="0,0" size="200,200" type="rect" lineSize="0" fillColor="#fffff4ce">
+      <gearDisplay controller="button" pages="1"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <graph id="n0_nbp1" name="holder" xy="0,0" pivot="0.5,0.5" size="200,200" type="rect" lineColor="#ff5e5e5e">
+      <gearDisplay controller="empty" pages="2"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n1_nbp1" name="title" xy="0,167" size="200,34" fontSize="16" align="center" vAlign="middle" ubb="true" autoSize="ellipsis" autoClearText="true" text="模型路径22222222222222">
+      <relation target="" sidePair="center-center,bottom-bottom"/>
+    </text>
+    <image id="n3_mcws" name="n3" src="g1jvqo" fileName="icon/file-tips-one.png" pkg="8vw069l3" xy="84,51">
+      <gearDisplay controller="empty" pages="1"/>
+    </image>
+    <text id="n4_mcws" name="n4" xy="30,109" pivot="0.5,0.5" size="141,24" fontSize="16" align="center" vAlign="middle" ubb="true" text="加载失败，v蛇傻逼">
+      <gearDisplay controller="empty" pages="1"/>
+    </text>
+  </displayList>
+  <Button/>
+</component>

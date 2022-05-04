@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="200,50" pivot="0.5,0.5" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n6_slbw" name="n6" src="slbwcs" fileName="ctrl/guideExplainFrame2.png" pkg="8vw069l3" xy="0,0" size="200,55">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n5_slbw" name="n5" src="slbwjp" fileName="ctrl/Btn_Icon_Plus.png" pkg="8vw069l3" xy="54,-21">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </image>
+  </displayList>
+  <Button downEffect="scale" downEffectValue=".8"/>
+</component>

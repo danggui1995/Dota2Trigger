@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="800,100" pivot="0.5,0.5" opaque="false">
+  <displayList>
+    <image id="n1_tf02" name="n1" src="tf02u4" fileName="pack/rect1.png" pkg="8vw069l3" xy="0,0" size="800,100" alpha="0.5">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n2_tf02" name="title" xy="0,0" size="800,100" fontSize="24" align="center" vAlign="middle" ubb="true" autoSize="none" autoClearText="true" text="1232132122222222212321321222222222123213212222222221232132122222222212321321222222222">
+      <relation target="n1_tf02" sidePair="center-center,middle-middle"/>
+    </text>
+  </displayList>
+</component>

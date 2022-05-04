@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="200,70" extention="Button">
+  <controller name="button" pages="0,up,1,down" selected="1"/>
+  <controller name="showprogress" pages="0,,1," selected="0"/>
+  <displayList>
+    <graph id="n0_rx1v" name="n0" xy="0,0" size="200,70" type="rect">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n1_rx1v" name="title" xy="0,0" size="200,70" fontSize="24" align="center" vAlign="middle" autoSize="none" singleLine="true" text="">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <component id="n3_rx1v" name="progress" src="rx1v7x" fileName="progress/ProgressBar1.xml" xy="0,0" size="200,70">
+      <gearDisplay controller="showprogress" pages="1"/>
+      <relation target="" sidePair="width-width,height-height"/>
+      <ProgressBar value="50" max="100"/>
+    </component>
+  </displayList>
+  <Button/>
+</component>

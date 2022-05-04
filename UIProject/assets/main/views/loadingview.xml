@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <component id="n1_uk7y" name="n1" src="khho90" fileName="views/blackmaskview.xml" xy="0,0">
+      <relation target="" sidePair="width-width,height-height,center-center,middle-middle"/>
+    </component>
+    <image id="n2_uk7y" name="n2" src="g1jvr9" fileName="icon/loading-three.png" pkg="8vw069l3" xy="847,386"/>
+  </displayList>
+</component>

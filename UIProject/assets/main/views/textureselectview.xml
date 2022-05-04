@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="copyType" pages="0,fileName,1,fullPath" selected="0"/>
+  <displayList>
+    <component id="n2_wgos" name="n2" src="g1jv80" fileName="views/maskview.xml" xy="0,0" size="1920,1080">
+      <relation target="" sidePair="width-width,height-height,center-center,middle-middle"/>
+    </component>
+    <list id="n0_wgos" name="list" xy="85,223" size="1750,769" layout="flow_hz" overflow="scroll" scrollBarFlags="132" lineGap="5" colGap="5" defaultItem="ui://exa71go7wgos8s" autoClearItems="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <list id="n1_wgos" name="tablist" xy="86,70" size="1689,69" layout="row" selectionMode="multipleSingleClick" overflow="scroll" scroll="horizontal" scrollBarFlags="132" colGap="10" defaultItem="ui://exa71go7wgos8t" autoClearItems="true">
+      <item title="11111111111"/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <component id="n3_wgos" name="closeBtn" src="mcws8l" fileName="comp/ButtonClose.xml" xy="1829,42"/>
+    <component id="n8_bggt" name="search" src="ihih7t" fileName="comp/SearchComp.xml" xy="84,155" size="509,50"/>
+  </displayList>
+</component>

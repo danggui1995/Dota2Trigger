@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="634,50">
+  <displayList>
+    <text id="n0_slbw" name="title" xy="0,8" size="539,34" fontSize="24" autoSize="none" text=""/>
+    <component id="n1_slbw" name="check" src="slbw5m" fileName="comp/ButtonCheck.xml" xy="598,7">
+      <relation target="" sidePair="middle-middle,right-right"/>
+    </component>
+  </displayList>
+</component>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1500,50" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <graph id="n0_ib0n" name="n0" xy="0,0" size="1500,50" type="rect" lineSize="0" lineColor="#ffe5e5e5" fillColor="#fffbfbfb" corner="2">
+      <gearColor controller="button" pages="1,2,3" values="#fff4ce|#fff4ce|#fff4ce" default="#fbfbfb" tween="true"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n3_g1jv" name="title" xy="0,0" size="1500,50" fontSize="24" autoSize="shrink" text="">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+  </displayList>
+  <Button mode="Radio"/>
+</component>

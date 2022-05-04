@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="800,32" extention="Button">
+  <displayList>
+    <graph id="n0_nnn5" name="n0" xy="0,0" size="800,32" type="rect" lineSize="0" fillColor="#ffd3e7f7" corner="1">
+      <relation target="" sidePair="width-width,height-height,center-center,middle-middle"/>
+    </graph>
+    <text id="n1_nnn5" name="title" xy="0,0" size="800,32" fontSize="20" autoSize="shrink" text="">
+      <relation target="" sidePair="width-width,height-height,center-center,middle-middle"/>
+    </text>
+  </displayList>
+  <Button mode="Radio"/>
+</component>

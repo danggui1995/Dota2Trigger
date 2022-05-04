@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="634,50" pivot="0.5,0.5" extention="Button">
+  <displayList>
+    <text id="n0_slbw" name="value" xy="318,0" size="316,50" fontSize="24" color="#33cc33" vAlign="middle" autoSize="ellipsis" underline="true" singleLine="true" autoClearText="true" text="11111111111">
+      <relation target="" sidePair="width-width,height-height,middle-middle,right-right"/>
+    </text>
+    <text id="n1_cz2f" name="title" xy="0,0" size="281,50" fontSize="24" vAlign="middle" ubb="true" autoSize="none" autoClearText="true" text="111111">
+      <relation target="" sidePair="width-width,height-height,middle-middle,left-left"/>
+    </text>
+  </displayList>
+  <Button/>
+</component>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" opaque="false">
+  <displayList>
+    <list id="n5_ib0n" name="toollist" xy="289,22" size="1605,1038" overflow="scroll" scrollBarFlags="128" lineGap="10" defaultItem="ui://exa71go7ib0n5d" autoClearItems="true">
+      <relation target="" sidePair="height-height,middle-middle,left-left,rightext-right"/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+  </displayList>
+</component>
