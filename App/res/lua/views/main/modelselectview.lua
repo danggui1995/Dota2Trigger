@@ -134,6 +134,19 @@ function M:onInit()
         MsgManager.copyToClipBorad(data[2])
     end)
     self.animlist:setVirtual()
+
+    local btnShowPrecache = self:getChild("btnShowPrecache", Button)
+    btnShowPrecache:onClick(function ()
+        local data = self.testlist:getDataProvider()
+        local list = {}
+        for _, v in ipairs(data) do
+            local model_player = self.itemsKV[v]["model_player"]
+            if model_player then
+                table.insert(list, string.format("\"%s\",\n", model_player))
+            end
+        end
+        MsgManager.copyToClipBorad(table.concat(list, ''))
+    end)
 end
 
 function M:resortAttachWearables()

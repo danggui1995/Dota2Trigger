@@ -15,6 +15,7 @@ function M.copyToClipBorad(str)
     if str then
         CS.UnityEngine.GUIUtility.systemCopyBuffer = str
         MsgManager.showMsg(1000043, str)
+        print(str)
     end
 end
 

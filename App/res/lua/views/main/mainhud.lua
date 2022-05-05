@@ -27,31 +27,24 @@ local tabConfig = {
 }
 
 function M:onInit()
-    self.tabList = self.root:GetChild("tabList")
+    self.tabList = self:getChild("tabList", List)
 
     local function onTabListClicked(context)
-        local index = context.data.data
         if self.lastView then
             UIManager.closeView(self.lastView)
         end
-        self.lastView = tabConfig[index][1]
+        self.lastView = context.data.data
         UIManager.openView(self.lastView)
-
-        if tabConfig[index][3] == true then
-            -- UIManager.closeView("toolbarview")
-        else
-            -- UIManager.openView("toolbarview")
-        end
     end
 
-    self.tabList.itemRenderer = function (index, obj)
-        index = index + 1
-        obj.title = tabConfig[index][2]
-        obj.data = index
-    end
-    self.tabList.onClickItem:Set(onTabListClicked)
+    self.tabList:setState(function (data, index, comp, obj)
+        obj.title = data[2]
+        obj.data = data[1]
+    end)
+    self.tabList:onClickItem(onTabListClicked)
 
-    self.tabList.numItems = #tabConfig
+    self.tabList:setDataProvider(tabConfig)
+    self.tabList:setSelectedIndex(1, true)
 
     VPKManager.loadVPK()
     VPKManager.load_items_game()

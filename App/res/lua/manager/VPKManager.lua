@@ -97,20 +97,22 @@ end
 
 function M.load_items_game(func)
     if not __items_game_map then
-        M.loadItem(itempath_items_game, function(fullpath)
-            __items_game_map = ckv.decode(XFileTools.ReadAllText(fullpath))["items_game"]["items"]
-            __items_game_list = {}
-            for id, v in pairs(__items_game_map) do
-                if v["model_player"] then
-                    table.insert(__items_game_list, {id, v["name"], v["model_player"], v["item_slot"]})
+        M.loadVPK(function()
+            VRFHelper.instance:LoadKVAsync(itempath_items_game, function(data)
+                __items_game_map = ckv.decode(data.ByteArray)["items_game"]["items"]
+                __items_game_list = {}
+                for id, v in pairs(__items_game_map) do
+                    if v["model_player"] then
+                        table.insert(__items_game_list, {id, v["name"], v["model_player"], v["item_slot"]})
+                    end
                 end
-            end
-            table.sort(__items_game_list, function(a, b)
-                return a[1] < b[1]
-            end)
-            if func then
-                func(__items_game_list, __items_game_map)
-            end
+                table.sort(__items_game_list, function(a, b)
+                    return a[1] < b[1]
+                end)
+                if func then
+                    func(__items_game_list, __items_game_map)
+                end
+            end, true)
         end)
     else
         if func then
