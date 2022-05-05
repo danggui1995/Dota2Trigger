@@ -45,5 +45,9 @@
     <component id="n5_i1qi" name="model" src="nbp18g" fileName="comp/Model.xml" xy="781,345" size="358,390">
       <relation target="" sidePair="center-center,middle-middle"/>
     </component>
+    <component id="n12_mels" name="btnShowPrecache" src="ihih7k" fileName="comp/ButtonLabel.xml" xy="1703,976">
+      <relation target="" sidePair="right-right,bottom-bottom"/>
+      <Button title="拷贝预载入路径"/>
+    </component>
   </displayList>
 </component>
