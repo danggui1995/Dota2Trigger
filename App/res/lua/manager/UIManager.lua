@@ -137,8 +137,21 @@ function M.init()
     end
 end
 
+local layerZOrder = {}
 function M.addToLayer(layer, obj)
     layerObj[layer]:AddChild(obj)
+    if not layerZOrder[layer] then
+        layerZOrder[layer] = 0
+    else
+        layerZOrder[layer] = layerZOrder[layer] - 500
+    end
+    obj.z = layerZOrder[layer]
+
+    M.adjustZOrder(layer)
+end
+
+function M.adjustZOrder(layer)
+    --TODO
 end
 
 function M.addPackage(name)

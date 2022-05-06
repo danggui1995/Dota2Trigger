@@ -24,4 +24,5 @@ ViewConfig = {
     textureselectview = {"views/main/textureselectview"},
     audioselectview = {"views/main/audioselectview"},
     soundeventview = {"views/main/soundeventview"},
+    modellistview = {"views/main/modellistview"},
 }

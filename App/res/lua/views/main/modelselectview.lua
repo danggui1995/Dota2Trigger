@@ -40,8 +40,10 @@ function M:onInit()
     self.list:setStencil()
     self.list:setClass(Model)
     self.list:setState(function (data, index, comp, obj)
-        comp:setModel(data[1], data[3], 50)
+
         comp:setStaticBindPose(true)
+        comp:setModel(data[3], 50)
+        
         obj.data = data
     end)
 
@@ -147,6 +149,16 @@ function M:onInit()
         end
         MsgManager.copyToClipBorad(table.concat(list, ''))
     end)
+
+    local btnWearId = self:getChild("btnWearId", Button)
+    btnWearId:onClick(function ()
+        local data = self.testlist:getDataProvider()
+        local list = {}
+        for i, v in ipairs(data) do
+            table.insert(list, string.format("\"%s\"	{\"ItemDef\"	\"%s\"}\n", i, v))
+        end
+        MsgManager.copyToClipBorad(table.concat(list, ''))
+    end)
 end
 
 function M:resortAttachWearables()
@@ -243,25 +255,34 @@ function M:onOpen(context, callback)
     self.callback = callback
     self.curid = context.id
 
-    local unitKv = context.view.unitKv
     local bodypath
-    for index = 1, #unitKv - 1, 2 do
-        local k = unitKv[index]
-        if k == "Model" then
-            bodypath = unitKv[index + 1]
-        elseif k == "Creature" then
-            local creature = unitKv[index + 1]
-            for index = 1, #creature - 1, 2 do
-                local k = creature[index]
-                if k == "AttachWearables" then
-                    self.AttachWearables = creature[index + 1]
-                    break
+    if context.view and context.view.unitKv then
+        local unitKv = context.view.unitKv
+        for index = 1, #unitKv - 1, 2 do
+            local k = unitKv[index]
+            if k == "Model" then
+                bodypath = unitKv[index + 1]
+            elseif k == "Creature" then
+                local creature = unitKv[index + 1]
+                for index = 1, #creature - 1, 2 do
+                    local k = creature[index]
+                    if k == "AttachWearables" then
+                        self.AttachWearables = creature[index + 1]
+                        break
+                    end
                 end
             end
         end
+    else
+        bodypath = context.bodypath
+        self.AttachWearables = {}
     end
 
     local partpath = context.partpath
+    if not partpath then
+        partpath = bodypath
+    end
+
     if partpath and partpath ~= "" then
         partpath = Path.GetDirectoryName(partpath)
     end
@@ -269,7 +290,8 @@ function M:onOpen(context, callback)
     self.searchComp:setText(self.filterStr)
 
     self:updatemodellist()
-    self.model:setModel(bodypath, bodypath, 90)
+
+    self.model:setModel(bodypath, 90)
     self.model:onModelLoaded(function (animUpdater)
         local listdata = {}
         local arr = animUpdater:GetAnimationList()
@@ -277,6 +299,7 @@ function M:onOpen(context, callback)
             table.insert(listdata, string.split(arr[index], "|"))
         end
         self.animlist:setDataProvider(listdata)
+        animUpdater:PlayDefaultAnimation()
     end)
     self.model:autoBones()
     self:updatetestlist()

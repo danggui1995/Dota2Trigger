@@ -49,5 +49,9 @@
       <relation target="" sidePair="right-right,bottom-bottom"/>
       <Button title="拷贝预载入路径"/>
     </component>
+    <component id="n13_igye" name="btnWearId" src="ihih7k" fileName="comp/ButtonLabel.xml" xy="1430,976" size="260,50">
+      <relation target="" sidePair="right-right,bottom-bottom"/>
+      <Button title="拷贝Creature字段"/>
+    </component>
   </displayList>
 </component>

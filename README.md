@@ -1,5 +1,5 @@
 # Why
-集成VRF开发一些提高爽度的工具
+集成VRF开发一些提高爽度的工具。
 
 # Video
 https://www.bilibili.com/video/BV19i4y1S7RA/
@@ -7,7 +7,7 @@ https://www.bilibili.com/video/BV19i4y1S7RA/
 https://www.bilibili.com/video/BV1Pi4y1m7BZ/
 
 # Development
-基于 On Unity, FairyGUI and XLua
+基于Unity，FairyGUI，XLua和VRF开发，目前开放全lua脚本和API。
 
 # Features
 1.实时搭配饰品，省去敲kv和预载入的查找，比官方的要快得多
@@ -21,4 +21,6 @@ https://www.bilibili.com/video/BV1Pi4y1m7BZ/
 5.KV实时编辑（太监中）
 
 # How To Use
-随缘
+首次使用需要设置引擎目录
+
+比如：C:\Games\steamapps\common\dota 2 beta\game\dota

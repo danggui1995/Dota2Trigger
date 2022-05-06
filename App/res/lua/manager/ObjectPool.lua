@@ -15,6 +15,11 @@ local spawnedObjects= {}
 --对象和资源的映射
 local objOfAssetInfo = {}
 
+local __objId = 0
+
+--取消加载
+local __cancelLoadObjs = {}
+
 local tickTimer
 function M.init()
     modelPoolNode = Main.instance.PoolModel.transform
@@ -52,45 +57,52 @@ function M.CheckUpdate()
 end
 
 --从对象池获取一个对象，callback回调获取到的对象
-function M.Spawn(key, path, callback)
-    if spawnedObjects[key] == nil then
-        spawnedObjects[key] = {}
+function M.Spawn(path, callback)
+    if spawnedObjects[path] == nil then
+        spawnedObjects[path] = {}
     end
 
+    __objId = __objId + 1
+    local spawnObjId = __objId
+
     --查找缓存是否有需要的
-    local assetTable = pooledObjects[key]
+    local assetTable = pooledObjects[path]
     if assetTable and #assetTable > 0 then
         local asset = assetTable[#assetTable]
         table.remove(assetTable)
-        table.insert(spawnedObjects[key], asset)
-        callback(asset, key)
-        return
+        table.insert(spawnedObjects[path], asset)
+        callback(asset)
+        return spawnObjId
     end
 
-    VPKManager.load_model(key, path, function (obj, oldkey)
+    VPKManager.load_model(path, path, function (obj)
         if obj == nil then
             if callback then
-                callback(nil, key)
+                callback(nil)
             end
             return
         end
 
-        table.insert(spawnedObjects[key], obj)
+        table.insert(spawnedObjects[path], obj)
+        objOfAssetInfo[obj] = path
 
-        local hashCode = obj:GetHashCode()
-        objOfAssetInfo[hashCode] = key
-
-        if oldkey ~= key then
+        if __cancelLoadObjs[spawnObjId] then
+            __cancelLoadObjs[spawnObjId] = nil
             M.Despawn(obj)
             return
         else
-            obj.transform.localPosition = Vector3(0,0,0)
-            obj.transform.localScale = Vector3(1,1,1)
+            obj.transform.localPosition = Vector3.zero
+            obj.transform.localScale = Vector3.one
             if callback then
-                callback(obj, key)
+                callback(obj)
             end
         end
     end)
+    return spawnObjId
+end
+
+function M.CancelLoad(uniqueId)
+    __cancelLoadObjs[uniqueId] = true
 end
 
 function M.Despawn(obj)
@@ -98,7 +110,7 @@ function M.Despawn(obj)
         return
     end
 
-    local key = objOfAssetInfo[obj:GetHashCode()]
+    local key = objOfAssetInfo[obj]
     if key == nil then
         return
     end
@@ -124,7 +136,6 @@ function M.Despawn(obj)
     --把对象移到池子里
     table.insert(pooledObjects[key], asset)
     table.removebyvalue(spawnedObjects[key], asset)
-
 end
 
 --销毁对象

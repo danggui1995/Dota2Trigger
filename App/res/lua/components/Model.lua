@@ -1,6 +1,6 @@
 local M = class("Model", Button)
 local goWrapPool = {}
-local vecPos = Vector3(0,0,-12)
+local vecPos = Vector3(0,0,-3)
 local vecZero = Vector3(0,0,0)
 local vecScale = Vector3(1,1,1)
 function M:ctor(root)
@@ -43,6 +43,7 @@ function M:ctor(root)
 
     -- end)
     
+    self.modelUniqueId = false
 end
 
 function M:onExit()
@@ -55,19 +56,22 @@ function M:onExit()
     self.animUpdater = nil
 end
 
-function M:setModel(id, path, scale)
+function M:setModel(path, scale)
     self.empty.selectedIndex = 0
     self.title.text = path
     self.scaleRatio = scale
-    self.curModelId = id
     
     if goWrapPool[self.root] and goWrapPool[self.root].wrapTarget then
         ObjectPool.Despawn(goWrapPool[self.root].wrapTarget)
         goWrapPool[self.root]:CustomClear()
     end
 
-    ObjectPool.Spawn(id, path, function (go, key)
-        if self.root.isDisposed or self.curModelId ~= key then
+    if self.modelUniqueId then
+        ObjectPool.CancelLoad(self.modelUniqueId)
+    end
+
+    self.modelUniqueId = ObjectPool.Spawn(path, function (go)
+        if self.root.isDisposed then
             ObjectPool.Despawn(go)
             return
         end
@@ -89,6 +93,7 @@ function M:setModel(id, path, scale)
                     ObjectPool.Despawn(oldTarget)
                 end
             end
+
             go.transform.localPosition = vecPos
             go.transform.localScale = vecScale
             self.wrapTarget = go
@@ -100,18 +105,17 @@ function M:setModel(id, path, scale)
                 end
             end
 
-            self.animUpdater = go:GetComponentInChildren(typeof(AnimUpdater))
-            if self._loadcallback then
-                self._loadcallback(self.animUpdater)
-            end
-
             if self.hasPart then
                 self:updatePartModel()
             end
 
             self:setStaticBindPose(self._bStaticBindPose)
             if not self._bStaticBindPose then
-                self.animUpdater:UpdatePosition()
+                self.animUpdater = go:GetComponentInChildren(typeof(AnimUpdater))
+                if self._loadcallback then
+                    self._loadcallback(self.animUpdater)
+                end
+                self.animUpdater:UpdatePosition(self.scaleRatio)
             end
         end
     end)
@@ -142,7 +146,7 @@ function M:setPart(part, partpath)
     end
     self.hasPart = true
     -- self:unloadPart(part)
-    ObjectPool.Spawn(partpath, partpath, function (go, key)
+    ObjectPool.Spawn(partpath, function (go, key)
         if self.root.isDisposed then
             ObjectPool.Despawn(go)
             return
@@ -196,8 +200,19 @@ end
 
 function M:setStaticBindPose(v)
     self._bStaticBindPose = v
-    if self._bStaticBindPose == true and self.wrapTarget then
-        self.wrapTarget:AddComponent(typeof(CS.CustomAnimation.StaticBindPose))
+
+    if self.wrapTarget then
+        local comp = self.wrapTarget:GetComponent(typeof(CS.CustomAnimation.StaticBindPose))
+        if self._bStaticBindPose == true then
+            if not comp then
+                comp = self.wrapTarget:AddComponent(typeof(CS.CustomAnimation.StaticBindPose))
+            end
+            comp:AdjustOffsetY()
+        else
+            if comp then
+                CS.UnityEngine.Object.Destroy(comp)
+            end
+        end
     end
 end
 

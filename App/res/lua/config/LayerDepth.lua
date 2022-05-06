@@ -1,7 +1,7 @@
 LayerDepth = {
-    Bottom = 600,
-    MainHud = 1000,
-    Window = 1100,
-    Float = 2000,
-    Top = 3000,
+    Bottom = 1000,
+    MainHud = 2000,
+    Window = 3000,
+    Float = 6000,
+    Top = 9000,
 }

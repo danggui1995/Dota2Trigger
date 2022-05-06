@@ -128,6 +128,7 @@
     <component id="l5qk92" name="soundfileitem.xml" path="/listitem/"/>
     <component id="nnn594" name="singletextline.xml" path="/listitem/"/>
     <component id="uk7y95" name="loadingview.xml" path="/views/" exported="true"/>
+    <component id="igye96" name="modellistview.xml" path="/views/" exported="true"/>
   </resources>
   <publish name=""/>
 </packageDescription>
