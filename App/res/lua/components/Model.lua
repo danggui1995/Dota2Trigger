@@ -53,14 +53,15 @@ function M:onExit()
         end
     end
 
-    self.animUpdater = nil
+    self:releaseModel()
+
+    if self.animUpdater then
+        self.animUpdater.animationName = nil
+        self.animUpdater = nil
+    end
 end
 
-function M:setModel(path, scale)
-    self.empty.selectedIndex = 0
-    self.title.text = path
-    self.scaleRatio = scale
-    
+function M:releaseModel()
     if goWrapPool[self.root] and goWrapPool[self.root].wrapTarget then
         ObjectPool.Despawn(goWrapPool[self.root].wrapTarget)
         goWrapPool[self.root]:CustomClear()
@@ -69,6 +70,14 @@ function M:setModel(path, scale)
     if self.modelUniqueId then
         ObjectPool.CancelLoad(self.modelUniqueId)
     end
+end
+
+function M:setModel(path, scale)
+    self.empty.selectedIndex = 0
+    self.title.text = path
+    self.scaleRatio = scale
+    
+    self:releaseModel()
 
     self.modelUniqueId = ObjectPool.Spawn(path, function (go)
         if self.root.isDisposed then

@@ -19,27 +19,28 @@
     <component id="n6_mcws" name="closeBtn" src="mcws8l" fileName="comp/ButtonClose.xml" xy="1836,35">
       <relation target="" sidePair="right-right,top-top"/>
     </component>
-    <list id="n7_rqwz" name="testlist" xy="1655,329" size="246,620" group="n9_e5tk" overflow="scroll" scrollBarFlags="132" defaultItem="ui://exa71go7rqwz8n" autoClearItems="true">
+    <list id="n7_rqwz" name="testlist" xy="1655,227" size="246,715" group="n9_e5tk" overflow="scroll" scrollBarFlags="132" defaultItem="ui://exa71go7rqwz8n" autoClearItems="true">
       <item/>
       <item/>
       <item/>
       <item/>
       <item/>
     </list>
-    <text id="n8_rqwz" name="n8" xy="1727,281" size="100,34" group="n9_e5tk" fontSize="24" align="center" ubb="true" text="饰品列表">
+    <text id="n8_rqwz" name="n8" xy="1732,119" size="100,34" group="n9_e5tk" fontSize="24" align="center" ubb="true" text="饰品列表">
       <relation target="n7_rqwz" sidePair="center-center,bottom-top"/>
     </text>
-    <list id="n10_e5tk" name="animlist" xy="1220,326" size="424,620" group="n9_e5tk" overflow="scroll" scrollBarFlags="132" lineGap="5" defaultItem="ui://exa71go7e5tk8o" autoClearItems="true">
+    <list id="n10_e5tk" name="animlist" xy="1220,226" size="424,713" group="n9_e5tk" overflow="scroll" scrollBarFlags="132" lineGap="5" defaultItem="ui://exa71go7e5tk8o" autoClearItems="true">
       <item/>
       <item/>
       <item/>
       <item/>
       <item/>
     </list>
-    <text id="n11_e5tk" name="n11" xy="1381,278" size="100,34" group="n9_e5tk" fontSize="24" align="center" ubb="true" text="动画列表">
+    <component id="n14_as4m" name="searchAnim" src="ihih7t" fileName="comp/SearchComp.xml" xy="1221,166" size="423,50" group="n9_e5tk"/>
+    <text id="n11_e5tk" name="n11" xy="1370,117" size="100,34" group="n9_e5tk" fontSize="24" align="center" ubb="true" text="动画列表">
       <relation target="n10_e5tk" sidePair="center-center,bottom-top"/>
     </text>
-    <group id="n9_e5tk" name="right" xy="1220,278" size="681,671" advanced="true">
+    <group id="n9_e5tk" name="right" xy="1220,117" size="681,825" advanced="true">
       <relation target="" sidePair="middle-middle,right-right"/>
     </group>
     <component id="n5_i1qi" name="model" src="nbp18g" fileName="comp/Model.xml" xy="781,345" size="358,390">

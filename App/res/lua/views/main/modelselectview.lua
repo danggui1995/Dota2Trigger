@@ -96,6 +96,12 @@ function M:onInit()
         self:updatemodellist()
     end)
 
+
+    local searchAnim = SearchComponent.new(self.root:GetChild("searchAnim"), function (text)
+        self.filterAnimStr = text
+        self:updateAnimList()
+    end)
+
     self.closeBtn = fgui.GetComponent(self.root, "closeBtn", Button)
     self.closeBtn:onClick(function ()
         self:close()
@@ -126,7 +132,7 @@ function M:onInit()
         local title = obj:GetChild("title")
         local str = data[1]
         if data[2] then
-            str = str .. "|" ..data[2]
+            str = str .. "\n" ..data[2]
         end
         title.text = str
     end)
@@ -251,6 +257,16 @@ function M:updatetestlist()
     self:resortAttachWearables()
 end
 
+function M:updateAnimList()
+    local listdata = {}
+    local arr = self.animUpdater:GetAnimationList(self.filterAnimStr)
+    for index = 0, arr.Length - 1 do
+        table.insert(listdata, string.split(arr[index], "|"))
+    end
+    self.animlist:setDataProvider(listdata)
+    self.animUpdater:PlayDefaultAnimation()
+end
+
 function M:onOpen(context, callback)
     self.callback = callback
     self.curid = context.id
@@ -291,16 +307,11 @@ function M:onOpen(context, callback)
 
     self:updatemodellist()
 
-    self.model:setModel(bodypath, 90)
     self.model:onModelLoaded(function (animUpdater)
-        local listdata = {}
-        local arr = animUpdater:GetAnimationList()
-        for index = 0, arr.Length - 1 do
-            table.insert(listdata, string.split(arr[index], "|"))
-        end
-        self.animlist:setDataProvider(listdata)
-        animUpdater:PlayDefaultAnimation()
+        self.animUpdater = animUpdater
+        self:updateAnimList()
     end)
+    self.model:setModel(bodypath, 90)
     self.model:autoBones()
     self:updatetestlist()
 end
