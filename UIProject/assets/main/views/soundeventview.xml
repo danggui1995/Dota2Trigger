@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
   <controller name="hasData" pages="0,,1," selected="0"/>
-  <controller name="internal" pages="0,,1," selected="0"/>
+  <controller name="internal" pages="0,,1," selected="1"/>
   <displayList>
     <component id="n23_khho" name="n23" src="khho90" fileName="views/blackmaskview.xml" xy="0,0">
       <relation target="" sidePair="width-width,height-height"/>
@@ -21,17 +21,13 @@
     <component id="n19_zlcp" name="addNewFileBtn" src="ihih7k" fileName="comp/ButtonLabel.xml" xy="401,293" size="142,50" group="n22_zlcp">
       <Button title="新文件" titleFontSize="18"/>
     </component>
-    <list id="n27_udqi" name="filelist" xy="401,362" size="406,529" group="n22_zlcp" overflow="scroll" scrollBarFlags="4" lineGap="5" defaultItem="ui://exa71go7l5qk92" autoClearItems="true">
+    <list id="n27_udqi" name="filelist" xy="401,362" size="542,529" group="n22_zlcp" overflow="scroll" scrollBarFlags="4" lineGap="5" defaultItem="ui://exa71go7l5qk92" autoClearItems="true">
       <item/>
       <item/>
       <item/>
       <item/>
     </list>
-    <image id="n29_n6cp" name="n29" src="tf02ty" fileName="pack/DisabledIcon.png" pkg="8vw069l3" xy="997,369" size="314,314" group="n22_zlcp">
-      <gearDisplay controller="hasData" pages="0"/>
-      <gearDisplay2 controller="internal" pages="1" condition="1"/>
-    </image>
-    <text id="n30_n6cp" name="n30" xy="1057,709" size="196,34" group="n22_zlcp" fontSize="24" ubb="true" text="内置事件无法修改">
+    <text id="n30_n6cp" name="n30" xy="1044,526" size="292,49" group="n22_zlcp" fontSize="36" ubb="true" text="内置事件无法修改">
       <gearDisplay controller="internal" pages="1"/>
     </text>
     <group id="n22_zlcp" name="n22" xy="401,185" size="1137,708" advanced="true">
