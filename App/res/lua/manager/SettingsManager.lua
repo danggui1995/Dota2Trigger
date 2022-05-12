@@ -19,6 +19,7 @@ SettingType = {
     PROJ_CREATE_TIME = {"PROJ_CREATE_TIME"},
     PROJ_OPEN_TIME = {"PROJ_OPEN_TIME"},
     THREAD_COUNT = {"THREAD_COUNT", 4},
+    LANGUAGE = {"LANGUAGE", "schinese"},
 }
 
 local RootName = "Settings"

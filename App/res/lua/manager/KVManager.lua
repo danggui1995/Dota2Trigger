@@ -26,7 +26,7 @@ local function getKvFilePath(subPath, isRead)
         printError(Desc.getText(1000011, gameDir))
         return
     end
-    local filePath = Path.Combine(gameDir, subPath)
+    local filePath = FileUtil.combinePath(gameDir, subPath)
     if isRead and not XFileTools.Exists(filePath) then
         printError(Desc.getText(1000012, filePath))
         return

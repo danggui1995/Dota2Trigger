@@ -23,7 +23,7 @@ local __callback = {
         
         -- local luaPath = Main.luaPath
         -- for _, v in ipairs(includeModule) do
-        --     local parent = Path.Combine(luaPath, v)
+        --     local parent = FileUtil.combinePath(luaPath, v)
         --     XFolderTools.TraverseFiles(parent, function (fullpath)
         --         local relativePath = Path.GetRelativePath(parent, fullpath)
         --         local k = relativePath:gsub("\\", ".")

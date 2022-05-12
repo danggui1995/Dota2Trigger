@@ -12,6 +12,7 @@ local config = {
     {Desc[1000008], "GAME_PATH", "BaseComponent", "kvinput"},
     {Desc[1000009], "CONTENT_PATH", "BaseComponent", "kvinput"},
     {Desc[1000044], "THREAD_COUNT", "NumberComponent", "kvnumber"},
+    {Desc[1000063], "LANGUAGE", "BaseComponent", "kvinput"},
 }
 
 function M:onInit()
@@ -48,6 +49,8 @@ function M:onInit()
     self.applyBtn:onClick(function ()
         SettingsManager.saveConfig()
         VPKManager.loadVPK()
+
+        MsgManager.showMsg(Desc.getText(1000064))
     end)
 end
 

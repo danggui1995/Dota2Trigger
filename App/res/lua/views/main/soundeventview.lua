@@ -86,11 +86,11 @@ function M:onInit()
         local name = obj:GetChild("name")
 
         if self.isInternal then
-            name.text = data[1]
-            path.text = data[2]
+            name.text = Desc.getText(1000061, data[1])
+            path.text = Desc.getText(1000062, data[2])
         else
-            name.text = data[3]
-            path.text = data[2]
+            name.text = Desc.getText(1000061, data[3])
+            path.text = Desc.getText(1000062, data[2])
         end
     end)
     self.filelist:onClickItem(function ()
@@ -144,6 +144,13 @@ function M:onInit()
             end
         },
         {
+            --copy name
+            text = Desc.getText(1000060),
+            callback = function (context)
+                MsgManager.copyToClipBorad(self.evtFullPath:gsub("vsndevts_c", "vsndevts"))
+            end
+        },
+        {
             --select
             text = Desc.getText(1000059),
             callback = function (context)
@@ -194,7 +201,7 @@ function M:onInit()
         if self.isInternal then
             MsgManager.showMsg(1000055, self.evtName)
         else
-            local soundRootPath = Path.Combine(SettingsManager.getConfig("CONTENT_PATH"), "soundevents")
+            local soundRootPath = FileUtil.combinePath(SettingsManager.getConfig("CONTENT_PATH"), "soundevents")
             local filelist = {}
             XFolderTools.TraverseFilesEX(soundRootPath, function (fullpath)
                 table.insert(filelist, fullpath)
@@ -208,7 +215,7 @@ function M:onInit()
 
     -- self.addToBtn = self:getChild("addToBtn", Button)
     -- self.addToBtn:onClick(function ()
-    --     local soundRootPath = Path.Combine(SettingsManager.getConfig("CONTENT_PATH"), "soundevents")
+    --     local soundRootPath = FileUtil.combinePath(SettingsManager.getConfig("CONTENT_PATH"), "soundevents")
     --     local filelist = {}
     --     XFolderTools.TraverseFilesEX(soundRootPath, function (fullpath)
     --         table.insert(filelist, fullpath)
@@ -239,9 +246,9 @@ end
 
 function M:addEmptyKv(input)
     local fileName = Path.GetFileName(input)
-    local soundRootPath = Path.Combine(SettingsManager.getConfig("CONTENT_PATH"), "soundevents")
+    local soundRootPath = FileUtil.combinePath(SettingsManager.getConfig("CONTENT_PATH"), "soundevents")
 
-    local fullpath = Path.Combine(soundRootPath, input)
+    local fullpath = FileUtil.combinePath(soundRootPath, input)
     local name1 = Path.GetFileName(Path.GetDirectoryName(fullpath))
     local name2 = Path.GetFileNameWithoutExtension(fullpath)
     VPKManager.appendSoundKv(fullpath, string.format("%s.%s", name1, name2), self:getTemplateKv(), self.vsndPath)
@@ -289,7 +296,6 @@ function M:onOpen(vsndPath, callback)
     self.vsndFullPath = vsndPath
     self.callback = callback
     vsndPath = vsndPath:gsub("\\", "/"):gsub("vsnd_c", "vsnd")
-
     self.vsndPath = VPKManager.getResPath("sounds", vsndPath, false)
 
     local ctrlIndex = 0

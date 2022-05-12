@@ -70,7 +70,7 @@ local toolConfig = {
             if index then
                 fileName = fileName:sub(index + 1)
             end
-            local destPath = Path.Combine(dirName, fileName)
+            local destPath = FileUtil.combinePath(dirName, fileName)
             XFileTools.MoveEx(fullPath, destPath)
         end)
     end, "INPUT_VRF_PATH", "OUTPUT_VRF_PATH"},
@@ -132,7 +132,7 @@ local toolConfig = {
     {"文件名小写", "input", "output", function (str1, str2, btn)
         XFolderTools.TraverseFilesEX(str1, function (fullpath)
             local filename = Path.GetFileName(fullpath):lower()
-            local newfullpath = Path.Combine(str2, filename)
+            local newfullpath = FileUtil.combinePath(str2, filename)
             XFileTools.Copy(fullpath, newfullpath)
         end)
     end, "test_gltf"},
@@ -181,7 +181,7 @@ local toolConfig = {
             end
             local directory = Path.GetDirectoryName(fullpath)
             local vtexfilename = Path.GetFileNameWithoutExtension(fullpath) .. ".vtex"
-            local vtexpath = Path.Combine(directory, vtexfilename)
+            local vtexpath = FileUtil.combinePath(directory, vtexfilename)
             if XFileTools.Exists(vtexpath) then
                 return
             end
@@ -196,7 +196,7 @@ local toolConfig = {
         end)
 
         local engineRoot = SettingsManager.getConfig("ENGINE_PATH")
-        local exePath = Path.Combine(engineRoot, "../bin/win64/resourcecompiler.exe")
+        local exePath = FileUtil.combinePath(engineRoot, "../bin/win64/resourcecompiler.exe")
         os.execute(string.format([[%s -i "%s*.vtex" -game %s]], exePath, str1, engineRoot))
     end, "test_gen_vtex"},
 }

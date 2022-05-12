@@ -30,8 +30,8 @@ function M:onInit()
         SettingsManager.curProject = key
         local curtime = os.time()
         SettingsManager.setConfig("PROJ_OPEN_TIME", curtime)
-        UIManager.openView("mainhud")
         SettingsManager.initSettings()
+        UIManager.openView("mainhud")
         self:close()
     end
 

@@ -42,10 +42,10 @@ function M.loadVPK(func)
         if not __isloadingVPK then
             __isloadingVPK = true
 
-            local vpkPath = Path.Combine(enginePath, vpk_path)
+            local vpkPath = FileUtil.combinePath(enginePath, vpk_path)
             Dispatcher.dispatchEvent(EventType.Progress_Change_Value, 0, Desc[1000040])
-            VRFHelper.instance:LoadVPK(vpkPath, function(pkg)
-                __vpkPackage = pkg
+            VRFHelper.instance:LoadVPK(vpkPath, SettingsManager.getConfig("LANGUAGE"), function()
+                __vpkPackage = true
                 __isloadingVPK = false
 
                 Dispatcher.dispatchEvent(EventType.Progress_Change_Value, 100)
@@ -86,7 +86,7 @@ end
 
 --@异步接口，传入回调函数
 function M.loadItem(path, func)
-    local fullpath = Path.Combine(extractRootPath, path):gsub(".vmdl", ".gltf")
+    local fullpath = FileUtil.combinePath(extractRootPath, path):gsub(".vmdl", ".gltf")
     if not XFileTools.Exists(fullpath) then
         M.extractItem(path, func, fullpath)
     else
@@ -262,7 +262,7 @@ function M.getLocalSoundEventFiles(path)
     if not __localEventPathInfoMap then
         __localEventPathInfoMap = {}
 
-        local soundRootPath = Path.Combine(SettingsManager.getConfig("CONTENT_PATH"), "soundevents")
+        local soundRootPath = FileUtil.combinePath(SettingsManager.getConfig("CONTENT_PATH"), "soundevents")
         XFolderTools.TraverseFilesEX(soundRootPath, function (fullpath)
             local ext = Path.GetExtension(fullpath)
             if ext ~= ".vsndevts" then
@@ -348,9 +348,9 @@ function M.getResPath(resType, path, bCustom)
     local resPath
     if bCustom then
         local contentRoot = SettingsManager.getConfig("CONTENT_PATH")
-        local rootPath = Path.Combine(contentRoot, resType)
+        local rootPath = FileUtil.combinePath(contentRoot, resType)
         if path then
-            resPath = Path.Combine(rootPath, path):gsub("\\", "/")
+            resPath = FileUtil.combinePath(rootPath, path):gsub("\\", "/")
         else
             resPath = rootPath:gsub("\\", "/")
         end
