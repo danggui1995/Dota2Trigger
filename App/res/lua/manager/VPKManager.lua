@@ -344,18 +344,18 @@ function M.getEventSoundMap(eventName, callback)
     end
 end
 
-function M.getResPath(resType, path, bFull)
-    local contentRoot = SettingsManager.getConfig("CONTENT_PATH")
-    local rootPath = Path.Combine(contentRoot, resType)
+function M.getResPath(resType, path, bCustom)
     local resPath
-    if bFull then
+    if bCustom then
+        local contentRoot = SettingsManager.getConfig("CONTENT_PATH")
+        local rootPath = Path.Combine(contentRoot, resType)
         if path then
             resPath = Path.Combine(rootPath, path):gsub("\\", "/")
         else
             resPath = rootPath:gsub("\\", "/")
         end
     else
-        resPath = path:gsub(contentRoot, ""):gsub("\\", "/"):gsub("/" .. resType, resType)
+        resPath = path:gsub("\\", "/"):gsub("/" .. resType, resType)
     end
     return resPath
 end

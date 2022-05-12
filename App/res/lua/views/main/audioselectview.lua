@@ -14,6 +14,7 @@ local tabListData = {
     {"ui", "sounds/ui", true},
     {"weapons", "sounds/weapons", true},
 
+    {"all", "", true},
     {"custom", "sounds", true, true},
 }
 
