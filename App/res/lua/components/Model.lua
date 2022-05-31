@@ -192,6 +192,10 @@ function M:play(animName, animAct)
         self.animUpdater:Play(animName)
     end
 
+    if not animAct then
+        animAct = "ACT_DOTA_IDLE"
+    end
+
     for _, go in pairs(self.allparts) do
         local animUpdater = go:GetComponent(typeof(AnimUpdater))
         if animUpdater then

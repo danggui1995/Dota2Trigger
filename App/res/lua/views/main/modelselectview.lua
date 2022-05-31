@@ -138,8 +138,12 @@ function M:onInit()
     end)
     self.animlist:onClickItem(function ()
         local data = self.animlist:getSelectedData()
-        local arr = string.split(data[2], "+")
-        self.model:play(data[1], arr[1])
+        local actType
+        if data[2] then
+            local arr = string.split(data[2], "+")
+            actType = arr[1]
+        end
+        self.model:play(data[1], actType)
         MsgManager.copyToClipBorad(data[2])
     end)
     self.animlist:setVirtual()
