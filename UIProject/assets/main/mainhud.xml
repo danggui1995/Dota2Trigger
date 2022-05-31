@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <list id="n1_ib0n" name="tabList" xy="0,0" size="200,1080" overflow="scroll" scrollBarFlags="132" lineGap="10" defaultItem="ui://exa71go7ib0n5a">
+      <relation target="" sidePair="height-height,left-left"/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+  </displayList>
+</component>

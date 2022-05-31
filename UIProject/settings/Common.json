@@ -1,0 +1,29 @@
+{
+  "font": "",
+  "fontSize": 24,
+  "textColor": "#000000",
+  "fontAdjustment": false,
+  "colorScheme": [
+    "亮底色1 #f3f3f3",
+    "亮底色2 #fbfbfb",
+    "亮底色3 #f9f9f9",
+    "亮描边 1 #5e5e5e",
+    "亮选中1 #fff4ce",
+    "浅蓝选中 #d3e7f7"
+  ],
+  "fontSizeScheme": [
+    "自定义字体大小 30"
+  ],
+  "fontScheme": [
+    "默认字体"
+  ],
+  "scrollBars": {
+    "horizontal": "ui://exa71go7ihih61",
+    "vertical": "ui://exa71go7ihih62",
+    "defaultDisplay": "visible"
+  },
+  "tipsRes": "",
+  "buttonClickSound": "",
+  "pivot": "default",
+  "fileName": "Common"
+}

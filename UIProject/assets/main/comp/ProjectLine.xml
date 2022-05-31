@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1500,100" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="1"/>
+  <displayList>
+    <graph id="n0_ib0n" name="n0" xy="0,0" size="1500,100" type="rect" lineColor="#ffe5e5e5" fillColor="#fffff4ce" corner="1">
+      <gearColor controller="button" pages="1,2,3" values="#fff4ce|#fff4ce|#fff4ce" default="#fbfbfb" tween="true"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n3_g1jv" name="name" xy="7,6" size="40,34" fontSize="24" text=""/>
+    <text id="n4_g1jv" name="path" xy="7,57" size="40,34" fontSize="24" color="#333333" text=""/>
+    <text id="n5_g1jv" name="time" xy="1440,6" size="40,34" fontSize="24" color="#333333" align="right" text="">
+      <relation target="" sidePair="right-right,top-top"/>
+    </text>
+  </displayList>
+  <Button/>
+</component>

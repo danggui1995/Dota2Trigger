@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1000,50">
+  <displayList>
+    <graph id="n0_slbw" name="n0" xy="319,0" size="681,50" type="rect">
+      <relation target="" sidePair="width-width,middle-middle,right-right"/>
+    </graph>
+    <text id="n1_slbw" name="input" xy="363,0" size="637,50" fontSize="24" vAlign="middle" autoSize="none" text="" input="true">
+      <relation target="n0_slbw" sidePair="width-width,height-height,center-center,middle-middle"/>
+    </text>
+    <text id="n2_jre8" name="title" xy="0,8" size="310,34" fontSize="24" autoSize="none" text=""/>
+    <image id="n3_wk08" name="n3" src="g1jvt2" fileName="icon/text-style.png" pkg="8vw069l3" xy="327,9">
+      <relation target="" sidePair="middle-middle,left-left"/>
+    </image>
+  </displayList>
+</component>

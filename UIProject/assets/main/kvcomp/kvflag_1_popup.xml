@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="360,500">
+  <displayList>
+    <graph id="n0_tkv7" name="n0" xy="0,0" size="360,500" touchable="false" type="rect" lineColor="#ffa0a0a0" fillColor="#fff0f0f0">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <list id="n1_tkv7" name="list" xy="0,0" size="360,500" selectionMode="multipleSingleClick" overflow="scroll" defaultItem="ui://exa71go7tkv788" autoClearItems="true">
+      <relation target="" sidePair="width-width"/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+  </displayList>
+  <relation target="n1_tkv7" sidePair="height-height"/>
+</component>

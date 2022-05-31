@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="704,44" extention="ProgressBar" initName="progressbar">
+  <displayList>
+    <graph id="n0_rx1v" name="n0" xy="0,0" size="704,44" type="rect">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <graph id="n1_rx1v" name="bar" xy="0,7" size="704,29" type="rect" lineSize="0" fillColor="#ff0099ff">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n2_rx1v" name="title" xy="0,0" size="704,44" fontSize="24" align="center" vAlign="middle" autoSize="none" text="">
+      <relation target="" sidePair="width-width,height-height,middle-middle"/>
+    </text>
+  </displayList>
+  <ProgressBar/>
+</component>

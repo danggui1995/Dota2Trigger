@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" opaque="false">
+  <controller name="show" pages="0,,1," selected="1"/>
+  <displayList>
+    <component id="n0_mnpk" name="progressbar" src="rx1v7x" fileName="progress/ProgressBar1.xml" xy="1548,1032" size="371,45">
+      <gearDisplay controller="show" pages="1"/>
+      <relation target="" sidePair="right-right,bottom-bottom"/>
+      <ProgressBar value="50" max="100"/>
+    </component>
+    <text id="n1_njxo" name="title" xy="1378,1038" pivot="1,0" size="164,34" fontSize="24" align="right" ubb="true" autoClearText="true" text="加载vpk22222">
+      <gearDisplay controller="show" pages="1"/>
+      <relation target="n0_mnpk" sidePair="middle-middle,right-left"/>
+    </text>
+  </displayList>
+</component>

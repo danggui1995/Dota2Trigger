@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="100,120" extention="Button">
+  <controller name="button" pages="0,up,1,down" selected="0"/>
+  <displayList>
+    <graph id="n2_wgos" name="n2" xy="0,0" size="100,120" type="rect" lineSize="0" fillColor="#ffd3e7f7">
+      <gearColor controller="button" pages="1" values="#fff4ce" default="#d3e7f7" tween="true"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n1_wgos" name="title" xy="0,0" size="100,120" fontSize="20" align="center" vAlign="middle" ubb="true" autoSize="shrink" autoClearText="true" text="123213">
+      <relation target="" sidePair="center-center,bottom-bottom"/>
+    </text>
+  </displayList>
+  <Button mode="Radio"/>
+</component>

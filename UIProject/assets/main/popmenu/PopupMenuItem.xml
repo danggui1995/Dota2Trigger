@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="200,50" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <controller name="checked" pages="0,,1,,2," selected="0"/>
+  <displayList>
+    <image id="n14" name="n14" src="ihih66" fileName="tex/a8_png.png" xy="0,0" size="200,50">
+      <gearDisplay controller="button" pages="1,2,3"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n6" name="n6" src="ihih7j" fileName="tex/VtSeperator.jpg" xy="38,0" size="2,50">
+      <relation target="" sidePair="height-height"/>
+    </image>
+    <text id="n1" name="title" xy="46,3" size="146,44" fontSize="24" autoSize="none" singleLine="true" text="">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <loader id="n3" name="icon" xy="1,9" size="32,32" align="center" vAlign="middle">
+      <relation target="" sidePair="middle-middle,left-left"/>
+    </loader>
+    <image id="n13" name="n13" src="ihih65" fileName="tex/a18_png.png" xy="0,9" size="32,32">
+      <gearDisplay controller="checked" pages="2"/>
+    </image>
+  </displayList>
+  <Button mode="Radio"/>
+</component>

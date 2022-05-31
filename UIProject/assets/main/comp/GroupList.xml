@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="500,300">
+  <displayList>
+    <list id="n2_9fn6" name="list" xy="34,50" size="432,250" defaultItem="ui://exa71go7kkj65f" autoClearItems="true">
+      <relation target="" sidePair="width-width,center-center"/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <component id="n7_9fn6" name="btn" src="9fn68d" fileName="comp/ButtonLabelExpand.xml" xy="13,0" size="473,50"/>
+  </displayList>
+  <relation target="n2_9fn6" sidePair="bottomext-bottom"/>
+</component>

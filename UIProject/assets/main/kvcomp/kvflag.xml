@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1000,50">
+  <displayList>
+    <component id="n1_jre8" name="drop" src="tkv78a" fileName="kvcomp/kvflag_1.xml" xy="460,0" size="540,50">
+      <relation target="" sidePair="middle-middle,right-right"/>
+      <ComboBox visibleItemCount="10"/>
+    </component>
+    <text id="n0_jre8" name="title" xy="0,8" size="452,34" fontSize="24" autoSize="none" text=""/>
+  </displayList>
+</component>

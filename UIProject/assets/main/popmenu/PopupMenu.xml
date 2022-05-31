@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="300,520">
+  <displayList>
+    <image id="n0" name="n0" src="ihih79" fileName="tex/s10.png.jpg" xy="0,0" size="300,520" aspect="true">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <list id="n1" name="list" xy="0,0" size="300,520" overflow="scroll" defaultItem="ui://exa71go7ihih7p" autoClearItems="true"/>
+  </displayList>
+  <relation target="n1" sidePair="width-width,height-height"/>
+</component>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <graph id="n1_8geo" name="n1" xy="0,0" size="1920,1080" type="rect" fillColor="#91000000">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <component id="n2_8geo" name="progressbar" src="rx1v7x" fileName="progress/ProgressBar1.xml" xy="608,518">
+      <relation target="" sidePair="center-center,middle-middle"/>
+      <ProgressBar value="50" max="100"/>
+    </component>
+    <text id="n4_8geo" name="title" xy="910,451" size="100,34" fontSize="24" color="#cccccc" align="center" ubb="true" autoClearText="true" text="蒸菜出里">
+      <relation target="n2_8geo" sidePair="center-center,bottom-top"/>
+    </text>
+  </displayList>
+</component>

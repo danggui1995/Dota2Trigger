@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="800,58" extention="Button">
+  <controller name="button" pages="0,up,1,down" selected="0"/>
+  <displayList>
+    <graph id="n1_l5qk" name="n1" xy="0,0" size="800,58" type="rect">
+      <gearColor controller="button" pages="1" values="#fff4ce" default="#ffffff" tween="true"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n4_l5qk" name="path" xy="0,0" size="800,29" fontSize="20" leading="0" ubb="true" autoSize="height" autoClearText="true" text="123">
+      <relation target="" sidePair="width-width"/>
+    </text>
+    <text id="n5_l5qk" name="name" xy="0,29" size="800,29" fontSize="20" ubb="true" autoSize="height" autoClearText="true" text="123">
+      <relation target="" sidePair="width-width"/>
+      <relation target="n4_l5qk" sidePair="left-left,top-bottom"/>
+    </text>
+  </displayList>
+  <Button mode="Radio"/>
+  <relation target="n5_l5qk" sidePair="bottomext-bottom"/>
+</component>

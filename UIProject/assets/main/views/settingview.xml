@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" opaque="false" designImage="ui://exa71go7ysvt0">
+  <displayList>
+    <list id="n1_kkj6" name="list" xy="256,0" size="1649,949" overflow="scroll" scrollBarFlags="128" lineGap="20" autoClearItems="true">
+      <relation target="" sidePair="height-height,middle-middle,right-right"/>
+    </list>
+    <component id="n2_slbw" name="applyBtn" src="slbw5s" fileName="comp/ButtonApply.xml" xy="1704,959"/>
+  </displayList>
+</component>

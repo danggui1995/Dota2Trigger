@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="473,74" extention="Slider">
+  <displayList>
+    <image id="n0_eklz" name="n0" src="tf02u4" fileName="pack/rect1.png" pkg="8vw069l3" xy="0,0" size="473,74">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n1_eklz" name="bar" src="tf02uf" fileName="pack/Top_Selected.png" pkg="8vw069l3" xy="0,0" size="473,74">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <component id="n3_eklz" name="grip" src="eklz8x" fileName="progress/Slider1_grip.xml" xy="457,21">
+      <relation target="n1_eklz" sidePair="right-right"/>
+      <relation target="" sidePair="middle-middle"/>
+    </component>
+    <text id="n2_eklz" name="title" xy="0,0" size="473,74" fontSize="20" align="center" vAlign="middle" autoSize="shrink" text="">
+      <relation target="" sidePair="width-width,height-height,center-center,middle-middle"/>
+    </text>
+  </displayList>
+  <Slider titleType="valueAndmax"/>
+</component>

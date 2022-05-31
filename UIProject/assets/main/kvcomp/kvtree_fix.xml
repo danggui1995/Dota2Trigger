@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1050,197">
+  <displayList>
+    <text id="n3_g1jv" name="title" xy="36,0" size="186,34" fontSize="24" ubb="true" autoClearText="true" text="1111111111222"/>
+    <list id="n4_g1jv" name="list" xy="36,39" size="1012,157" scrollItemToViewOnClick="false">
+      <relation target="" sidePair="rightext-right"/>
+    </list>
+    <image id="n10_di0n" name="n10" src="g1jvq0" fileName="icon/dot.png" pkg="8vw069l3" xy="0,0"/>
+  </displayList>
+  <relation target="n4_g1jv" sidePair="bottomext-bottom"/>
+</component>

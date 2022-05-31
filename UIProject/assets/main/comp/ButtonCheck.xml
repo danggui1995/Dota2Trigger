@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="36,36" extention="Button">
+  <controller name="button" pages="0,up,1,down" selected="0"/>
+  <displayList>
+    <graph id="n4_slbw" name="n4" xy="0,0" size="36,36" type="rect" lineColor="#ff5e5e5e" fillColor="#fff9f9f9" corner="1">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <image id="n5_slbw" name="n5" src="g1jvpa" fileName="icon/check.png" pkg="8vw069l3" xy="0,0" size="36,36">
+      <gearDisplay controller="button" pages="1"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+  </displayList>
+  <Button mode="Check"/>
+</component>

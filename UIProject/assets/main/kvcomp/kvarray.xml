@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1050,235">
+  <displayList>
+    <text id="n3_g1jv" name="title" xy="36,0" size="186,34" fontSize="24" ubb="true" autoClearText="true" text="1111111111222"/>
+    <list id="n4_g1jv" name="list" xy="36,39" size="1012,157" scrollItemToViewOnClick="false">
+      <relation target="" sidePair="rightext-right"/>
+    </list>
+    <image id="n10_di0n" name="n10" src="g1jvo9" fileName="icon/align-text-both.png" pkg="8vw069l3" xy="0,0"/>
+    <component id="n11_o9xh" name="addBtn" src="slbw5o" fileName="comp/ButtonAdd.xml" xy="31,197" group="n13_o9xh"/>
+    <component id="n12_o9xh" name="subBtn" src="slbw5p" fileName="comp/ButtonSub.xml" xy="71,197" group="n13_o9xh"/>
+    <group id="n13_o9xh" name="n13" xy="31,197" size="76,36" advanced="true">
+      <relation target="n4_g1jv" sidePair="top-bottom"/>
+    </group>
+  </displayList>
+  <relation target="n13_o9xh" sidePair="bottomext-bottom"/>
+</component>

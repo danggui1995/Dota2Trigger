@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1144,51">
+  <displayList>
+    <component id="n2_ib0n" name="input1" src="ib0n5c" fileName="comp/inputLine.xml" xy="0,1">
+      <relation target="" sidePair="width-width,left-left"/>
+    </component>
+    <component id="n3_ib0n" name="input2" src="ib0n5c" fileName="comp/inputLine.xml" xy="437,1">
+      <relation target="" sidePair="width-width"/>
+    </component>
+    <component id="n4_ib0n" name="btn" src="rx1v7w" fileName="comp/ButtonProgress.xml" xy="874,0" size="270,50">
+      <relation target="" sidePair="width-width,right-right"/>
+    </component>
+  </displayList>
+</component>

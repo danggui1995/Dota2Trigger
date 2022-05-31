@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="300,50" initName="search">
+  <displayList>
+    <graph id="n1_ihih" name="n1" xy="0,0" size="300,50" type="rect" fillColor="#ff6699cc">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <component id="n0_ihih" name="btn" src="slbw5v" fileName="comp/ButtonIcon.xml" xy="255,9" aspect="true">
+      <relation target="" sidePair="middle-middle,right-right"/>
+      <Button icon="ui://8vw069l3g1jvpf"/>
+    </component>
+    <text id="n2_ihih" name="input" xy="0,8" size="240,34" fontSize="24" autoSize="none" text="" input="true" prompt="模糊搜索">
+      <relation target="" sidePair="middle-middle,left-left"/>
+      <relation target="n0_ihih" sidePair="rightext-left"/>
+    </text>
+  </displayList>
+</component>

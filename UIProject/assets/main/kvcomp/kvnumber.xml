@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="634,50">
+  <displayList>
+    <text id="n4_jre8" name="title" xy="0,8" size="310,34" fontSize="24" autoSize="none" text=""/>
+    <image id="n0_slbw" name="n0" src="ihih79" fileName="tex/s10.png.jpg" xy="378,0" size="256,50" group="n5_kst1">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n1_slbw" name="input" xy="443,0" size="130,50" group="n5_kst1" fontSize="24" align="center" vAlign="middle" autoSize="none" text="2.222" input="true" restrict="[0-9\.-]" keyboardType="4"/>
+    <component id="n2_slbw" name="subBtn" src="slbw5p" fileName="comp/ButtonSub.xml" xy="398,7" group="n5_kst1"/>
+    <component id="n3_slbw" name="addBtn" src="slbw5o" fileName="comp/ButtonAdd.xml" xy="580,7" group="n5_kst1"/>
+    <group id="n5_kst1" name="n5" xy="378,0" size="256,50" advanced="true">
+      <relation target="" sidePair="middle-middle,right-right"/>
+    </group>
+  </displayList>
+</component>

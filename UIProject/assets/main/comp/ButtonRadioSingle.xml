@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="104,31" extention="Button">
+  <controller name="button" pages="0,up,1,down" selected="0"/>
+  <displayList>
+    <image id="n3_wgos" name="n3" src="tf02tv" fileName="pack/circle.png" pkg="8vw069l3" xy="0,0"/>
+    <image id="n4_wgos" name="n4" src="tf02tx" fileName="pack/circle_selected.png" pkg="8vw069l3" xy="0,0">
+      <gearDisplay controller="button" pages="1"/>
+    </image>
+    <text id="n5_wgos" name="title" xy="31,1" size="70,29" fontSize="20" ubb="true" autoClearText="true" text="123213"/>
+  </displayList>
+  <Button mode="Radio"/>
+  <relation target="n5_wgos" sidePair="rightext-right"/>
+</component>
