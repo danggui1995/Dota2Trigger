@@ -35,10 +35,11 @@ function M.openView(viewName, ...)
             __openedViews[viewName] = view
         end
 
-        if info.layerDepth == LayerDepth.Window then
-            table.insert(__viewStack, view)
-            view.stackIndex = #__viewStack
+        if not __viewStack[view.layerDepth] then
+            __viewStack[view.layerDepth] = {}
         end
+        table.insert(__viewStack[view.layerDepth], view)
+        view.stackIndex = #__viewStack[view.layerDepth]
 
         local ok, msg = pcall(safeShowView, view, ...)
         if not ok then
@@ -58,12 +59,13 @@ function M.closeView(viewName)
         view = __openedViews[viewName]
         __openedViews[viewName] = nil
 
-        if view.stackIndex < #__viewStack then
-            for index = view.stackIndex + 1, #__viewStack do
-                __viewStack[index].stackIndex = __viewStack[index].stackIndex - 1
+        local layerDepth = view.layerDepth
+        if view.stackIndex < #__viewStack[layerDepth] then
+            for index = view.stackIndex + 1, #__viewStack[layerDepth] do
+                __viewStack[layerDepth][index].stackIndex = __viewStack[layerDepth][index].stackIndex - 1
             end
         end
-        table.remove(__viewStack, view.stackIndex)
+        table.remove(__viewStack[layerDepth], view.stackIndex)
     elseif __residentViews[viewName] then
         view = __residentViews[viewName]
         __residentViews[viewName] = nil
@@ -128,15 +130,14 @@ function M.init()
     end
 end
 
-local layerZOrder = {}
 function M.addToLayer(layer, obj)
     layerObj[layer]:AddChild(obj)
-    if not layerZOrder[layer] then
-        layerZOrder[layer] = 0
-    else
-        layerZOrder[layer] = layerZOrder[layer] - 500
+    local stack = __viewStack[layer]
+    local index = 0
+    if stack and #stack > 0 then
+        index = #stack
     end
-    obj.z = layerZOrder[layer]
+    obj.z = index * (-500)
 
     M.adjustZOrder(layer)
 end
@@ -153,7 +154,11 @@ end
 
 --关闭最顶上的一个Window 其他的不走这里
 function M.popView()
-    local topView = __viewStack[#__viewStack]
+    local stack = __viewStack[LayerDepth.Window]
+    if not stack or #stack == 0 then
+        return
+    end
+    local topView = stack[#stack]
     topView:close()
 end
 
