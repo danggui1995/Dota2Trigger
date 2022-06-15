@@ -1,10 +1,6 @@
 
 local M = {}
 
---[[
-颜色相关
-]]
-
 --满足与不满足的颜色
 function M.toEnoughColor(isEnough,content)
     local color = isEnough and "#00a131" or "#ff0000"
@@ -23,4 +19,4 @@ function M.numEnoughStr(format,have,need)
     return string.format(format,string.format("[color=%s]%s[/color]",color,have),need)
 end
 
-rawset(_G, "ColorUtil", M)
+ColorUtil = M
