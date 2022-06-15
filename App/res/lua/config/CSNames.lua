@@ -16,6 +16,7 @@ FileEncoder = CS.Trigger.FileEncoder
 VRFHelper = CS.Trigger.VRFHelper
 GltfHelper = CS.Trigger.GltfHelper
 AnimUpdater = CS.CustomAnimation.AnimUpdater
+IO = CS.System.IO
 
 --fgui
 CSTimers = CS.FairyGUI.Timers

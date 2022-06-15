@@ -8,4 +8,15 @@ function M.combinePath(str1, str2)
 	end
 end
 
+function M.getRelativePath(fullpath)
+    local a,b,c = fullpath:find("content")
+    if b then
+        return fullpath:sub(b + 2)
+    end
+end
+
+function M.getShortDirName(fullpath)
+	return IO.Path.GetFileName(IO.Path.GetDirectoryName(fullpath))
+end
+
 FileUtil = M

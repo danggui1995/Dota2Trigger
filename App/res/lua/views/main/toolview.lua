@@ -107,72 +107,52 @@ local toolConfig = {
             print("success")
         end)
     end, "test_gltf"},
-    {"批量编译图片", "input", "", function (str1, str2, btn)
-        local pattern = [[
-<!-- dmx encoding keyvalues2_noids 1 format vtex 1 -->
-"CDmeVtex"
+
+    {"批量覆盖Music", "input", "output", function (str1, str2, btn)
+        local allEvts = {}
+        table.insert(allEvts, [[
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
-    "m_inputTextureArray" "element_array" 
-    [
-        "CDmeInputTexture"
-        {
-            "m_name" "string" "0"
-            "m_fileName" "string" "%s"
-            "m_colorSpace" "string" "srgb"
-            "m_typeString" "string" "2D"
-        }
-    ]
-    "m_outputTypeString" "string" "2D"
-    "m_outputFormat" "string" "DXT5"
-    "m_textureOutputChannelArray" "element_array"
-    [
-        "CDmeTextureOutputChannel"
-        {
-            "m_inputTextureArray" "string_array"
-                [
-                    "0"
-                ]
-            "m_srcChannels" "string" "rgba"
-            "m_dstChannels" "string" "rgba"
-            "m_mipAlgorithm" "CDmeImageProcessor"
-            {
-                "m_algorithm" "string" ""
-                "m_stringArg" "string" ""
-                "m_vFloat4Arg" "vector4" "0 0 0 0"
-            }
-            "m_outputColorSpace" "string" "srgb"
-        }
-    ]
-}
-        ]]
-        XFolderTools.TraverseFilesEX(str1, function (fullpath)
-            local ext = Path.GetExtension(fullpath)
-            if (ext ~= ".png" and ext ~= ".jpg" and ext ~= ".tga") then
-                return
+        ]])
+        local pattern = [[
+            
+    %s = 
+    {
+        type = "dota_src1_2d"
+		vsnd_files = "sounds/null.vsnd"
+    }]]
+        VPKManager.load_soundevents(function (pathMap)
+            for k, v in pairs(pathMap) do
+                for kk, vv in pairs(v) do
+                    if vv[1]:find("music%.") then
+                        table.insert(allEvts, string.format(pattern, vv[1]))
+                    end
+                end
             end
-            local directory = Path.GetDirectoryName(fullpath)
-            local vtexfilename = Path.GetFileNameWithoutExtension(fullpath) .. ".vtex"
-            local vtexpath = FileUtil.combinePath(directory, vtexfilename)
-            if XFileTools.Exists(vtexpath) then
-                return
-            end
-            local contentRoot = SettingsManager.getConfig("CONTENT_PATH")
-            local relativePath = fullpath:gsub(contentRoot, "")
-            if relativePath:sub(1,1) == "/" then
-                relativePath = relativePath:sub(2)
-            end
-
-            local vtexcontent = string.format(pattern, relativePath)
-            XFileTools.WriteAllText(vtexpath, vtexcontent)
         end)
+        table.insert(allEvts, "\n}")
 
-        local engineRoot = SettingsManager.getConfig("ENGINE_PATH")
-        local exePath = FileUtil.combinePath(engineRoot, "../bin/win64/resourcecompiler.exe")
-        os.execute(string.format([[%s -i "%s*.vtex" -game %s]], exePath, str1, engineRoot))
-    end, "test_gen_vtex"},
+        if str2 == "" then
+            str2 = "E:/gitee/metalmax/content/soundevents/override.vsndevts"
+        end
+        XFileTools.WriteAllText(str2, table.concat(allEvts, ""))
+    end, "test_override_music"},
+}
+
+local submodule = {
+    "test.testmaterial",
+    "test.testvtex",
+    "test.testmodel",
 }
 
 function M:onInit()
+    for _, moduleName in ipairs(submodule) do
+        local m = require(moduleName)
+        for _, v in ipairs(m) do
+            table.insert(toolConfig, v)
+        end
+    end
+   
     self.toollist = self.root:GetChild("toollist")
 
     local function ontoollistClicked(context)
